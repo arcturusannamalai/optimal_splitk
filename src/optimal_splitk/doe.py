@@ -1,5 +1,5 @@
 import numpy as np
-#import numba
+import numba
 from tqdm import tqdm
 from .encode import encode_model, encode_design, decode_design
 from .init import initialize_single
@@ -10,7 +10,7 @@ from .utils import CACHE
 ##  UPDATE FORMULAS
 ##################################################################
 
-#@numba.njit(cache=CACHE)
+@numba.njit(cache=CACHE)
 def x2fx(Y, model):
     """
     Create the model matrix from the design matrix and model specification.
@@ -55,7 +55,7 @@ def x2fx(Y, model):
 ##  OPTIMIZATION
 ##################################################################
 
-#@numba.njit(cache=CACHE)
+@numba.njit(cache=CACHE)
 def generate_coordinates(cat_lvl, default=np.array([[]], dtype=np.float64)):
     """
     Generate possible coordinates depending on the amount of
@@ -96,9 +96,10 @@ def generate_coordinates(cat_lvl, default=np.array([[]], dtype=np.float64)):
 
     return possible_coords
 
+# not compilable with numba v0.59.0
 #@numba.njit(cache=CACHE)
 def optimize(Y, model, plot_sizes, factors,
-             optim, prestate, max_it=10, col_start=None, default_coords=None):
+             optim:object, prestate, max_it=10, col_start=None, default_coords=None):
     """
     Optimize a model iteratively using the coordinate exchange algorithm.
 

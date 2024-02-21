@@ -6,7 +6,6 @@ Babel==2.14.0
 beautifulsoup4==4.12.3
 certifi==2024.2.2
 charset-normalizer==3.3.2
-Django==4.2.9
 docutils==0.20.1
 et-xmlfile==1.1.0
 future @ file:///AppleInternal/Library/BuildRoots/9dd5efe2-7fad-11ee-b588-aa530c46a9ea/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
@@ -28,6 +27,7 @@ Pygments==2.17.2
 python-dateutil==2.8.2
 pytz==2023.3.post1
 requests==2.31.0
+scipy==1.12.0
 six @ file:///AppleInternal/Library/BuildRoots/9dd5efe2-7fad-11ee-b588-aa530c46a9ea/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
 snowballstemmer==2.2.0
 soupsieve==2.5
