@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pandas as pd
 
@@ -6,7 +7,8 @@ from optimal_splitk.init import *
 from optimal_splitk.utils import *
 from optimal_splitk.validation import *
 
-root = '.'
+
+root,_ = os.path.split(__file__)
 
 # The model
 model = pd.read_excel(f'{root}/assets/model.xlsx', index_col=0).to_numpy()
